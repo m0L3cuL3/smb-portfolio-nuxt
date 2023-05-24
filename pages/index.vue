@@ -4,7 +4,12 @@
       class="bg-grey-darken-4 h-50 d-flex flex-column justify-center align-center"
     >
       <h1
-        class="text-h4 text-uppercase text-wrap font-weight-bold mb-4 text-center d-flex d-sm-none"
+        class="text-h5 text-uppercase text-wrap font-weight-bold mb-4 text-center d-flex d-sm-none"
+      >
+        Hi, I'm Sean Baang
+      </h1>
+      <h1
+        class="text-h4 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-sm-flex d-md-none"
       >
         Hi, I'm Sean Baang
       </h1>
