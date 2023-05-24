@@ -3,7 +3,24 @@
     <section
       class="bg-grey-darken-4 h-50 d-flex flex-column justify-center align-center"
     >
-      <h1 class="text-h1 text-uppercase font-weight-bold mb-4 text-center">
+      <h1
+        class="text-h4 text-uppercase text-wrap font-weight-bold mb-4 text-center d-flex d-sm-none"
+      >
+        Hi, I'm Sean Baang
+      </h1>
+      <h1
+        class="text-h3 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-md-flex d-lg-none"
+      >
+        Hi, I'm Sean Baang
+      </h1>
+      <h1
+        class="text-h2 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-lg-flex d-xl-none"
+      >
+        Hi, I'm Sean Baang
+      </h1>
+      <h1
+        class="text-h1 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-xl-flex"
+      >
         Hi, I'm Sean Baang
       </h1>
       <div class="type d-flex flex-row">
