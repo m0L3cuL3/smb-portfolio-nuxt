@@ -1,16 +1,19 @@
 <template>
   <v-app-bar>
-    <div class="w-100 d-flex justify-center">
-      <div class="ma-1" v-for="path in paths">
-        <v-btn
-          :to="path.to"
-          :prepend-icon="path.icon"
-          variant="text"
-          :ripple="false"
-          >{{ path.pathname }}</v-btn
-        >
-      </div>
+    <v-app-bar-title>
+      <h1 class="text-overline">My Portfolio</h1>
+    </v-app-bar-title>
+    <div class="" v-for="path in paths">
+      <v-btn
+        class="ma-2 w-fit-content"
+        :to="path.to"
+        :prepend-icon="path.icon"
+        variant="text"
+        :ripple="false"
+        >{{ path.pathname }}</v-btn
+      >
     </div>
+    <v-spacer></v-spacer>
   </v-app-bar>
 </template>
 
