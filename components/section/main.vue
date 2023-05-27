@@ -2,31 +2,10 @@
   <section
     class="bg-grey-darken-4 h-50 d-flex flex-column justify-center align-center"
   >
-    <h1
-      class="text-h5 text-uppercase text-wrap font-weight-bold mb-4 text-center d-flex d-sm-none"
-    >
-      Hi, I'm Sean Baang
-    </h1>
-    <h1
-      class="text-h4 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-sm-flex d-md-none"
-    >
-      Hi, I'm Sean Baang
-    </h1>
-    <h1
-      class="text-h3 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-md-flex d-lg-none"
-    >
-      Hi, I'm Sean Baang
-    </h1>
-    <h1
-      class="text-h2 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-lg-flex d-xl-none"
-    >
-      Hi, I'm Sean Baang
-    </h1>
-    <h1
-      class="text-h1 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-xl-flex"
-    >
-      Hi, I'm Sean Baang
-    </h1>
+    <div v-for="item in headClasses">
+      <h1 :class="item">Hi, I'm Sean Baang</h1>
+    </div>
+
     <div class="type d-flex flex-row">
       <h2 class="t1 mr-2 text-red-darken-1">
         Plan<span class="text-white">,</span>
@@ -53,7 +32,15 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted } from 'vue';
+
+const headClasses = [
+  'text-h5 text-uppercase text-wrap font-weight-bold mb-4 text-center d-flex d-sm-none',
+  'text-h4 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-sm-flex d-md-none',
+  'text-h3 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-md-flex d-lg-none',
+  'text-h2 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-lg-flex d-xl-none',
+  'text-h1 text-uppercase text-wrap font-weight-bold mb-4 text-center d-none d-xl-flex',
+];
 
 const { $anime } = useNuxtApp();
 var ml4: any = {};
@@ -68,19 +55,19 @@ onMounted(() => {
   $anime
     .timeline({ loop: false })
     .add({
-      targets: ".type .t1",
+      targets: '.type .t1',
       opacity: ml4.opacityIn,
       scale: ml4.scaleIn,
       duration: ml4.durationIn,
     })
     .add({
-      targets: ".type .t2",
+      targets: '.type .t2',
       opacity: ml4.opacityIn,
       scale: ml4.scaleIn,
       duration: ml4.durationIn,
     })
     .add({
-      targets: ".type .t3",
+      targets: '.type .t3',
       opacity: ml4.opacityIn,
       scale: ml4.scaleIn,
       duration: ml4.durationIn,
