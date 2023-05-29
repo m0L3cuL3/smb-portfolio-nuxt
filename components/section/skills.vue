@@ -38,6 +38,13 @@ const programmingLanguages = [
   { title: 'Lua Script' },
   { title: 'PHP' },
   { title: 'NuxtJS' },
+  { title: 'MySQL' },
+  { title: 'GraphQL' },
 ];
-const devTools = [{ title: 'VSCode' }, { title: 'Github' }];
+const devTools = [
+  { title: 'VSCode' },
+  { title: 'Github' },
+  { title: 'Slack' },
+  { title: 'Discord' },
+];
 </script>
