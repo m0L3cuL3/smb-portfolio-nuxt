@@ -2,5 +2,7 @@
   <Head>
     <Title>Blog</Title>
   </Head>
-  <h1>Blog Page</h1>
+  <div class="d-flex flex-column justify-center">
+    <h1>Blog Posts</h1>
+  </div>
 </template>
