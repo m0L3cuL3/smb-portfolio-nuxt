@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 const paths = [
-  { to: "/", pathname: "Home", icon: "mdi-home" },
+  { to: '/', pathname: 'Home', icon: 'mdi-home' },
   // { to: "/blog", pathname: "Blog", icon: "" },
 ];
 </script>

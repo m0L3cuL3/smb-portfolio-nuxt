@@ -8,8 +8,5 @@
     >
       <SectionMain />
     </div>
-    <div class="d-flex flex-column justify-center bg-grey-darken-4 py-12">
-      <SectionSkills />
-    </div>
   </div>
 </template>

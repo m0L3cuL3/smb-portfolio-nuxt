@@ -23,6 +23,7 @@
       width="200"
       :ripple="false"
       prepend-icon="mdi-github"
+      href="https://github.com/m0L3cuL3"
       >Github</v-btn
     >
     <v-btn
@@ -32,6 +33,7 @@
       width="200"
       :ripple="false"
       prepend-icon="mdi-linkedin"
+      href="https://www.linkedin.com/in/seanbaang"
       >LinkedIn</v-btn
     >
   </div>
