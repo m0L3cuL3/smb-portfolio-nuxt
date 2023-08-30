@@ -1,41 +1,27 @@
 <template>
-  <div v-for="item in headClasses">
-    <h1 :class="item">Hi, I'm Sean Baang</h1>
-  </div>
+  <div class="d-flex flex-column">
+    <div class="bg-transparent d-flex flex-column justify-center align-center h-screen">
+      <div v-for="item in headClasses">
+        <h1 :class="item">Hi, I'm Sean Baang</h1>
+      </div>
 
-  <div class="type d-flex flex-row">
-    <h2 class="t1 mr-2 text-red-darken-1">
-      Plan<span class="text-white">,</span>
-    </h2>
-    <h2 class="t2 mr-2 text-blue-darken-1">
-      Develop<span class="text-white">,</span>
-    </h2>
-    <h2 class="t3 mr-2 text-green-darken-1">Deploy</h2>
-  </div>
-  <p class="text-overline text-center">Junior DevOps & Backend Developer</p>
-  <div
-    class="d-flex flex-row flex-wrap justify-center align-center mt-2 w-50 h-25"
-  >
-    <v-btn
-      class="mx-1"
-      color="green-darken-3"
-      variant="flat"
-      width="200"
-      :ripple="false"
-      prepend-icon="mdi-github"
-      href="https://github.com/m0L3cuL3"
-      >Github</v-btn
-    >
-    <v-btn
-      class="mx-1"
-      color="blue-darken-3"
-      variant="flat"
-      width="200"
-      :ripple="false"
-      prepend-icon="mdi-linkedin"
-      href="https://www.linkedin.com/in/seanbaang"
-      >LinkedIn</v-btn
-    >
+      <div class="type d-flex flex-row">
+        <h2 class="t1 mr-2 text-red-darken-1">
+          Plan<span class="text-white">,</span>
+        </h2>
+        <h2 class="t2 mr-2 text-blue-darken-1">
+          Develop<span class="text-white">,</span>
+        </h2>
+        <h2 class="t3 mr-2 text-green-darken-1">Deploy</h2>
+      </div>
+      <p class="text-overline text-center">Junior DevOps & Backend Developer</p>
+      <div class="d-flex flex-row flex-wrap justify-center align-center mt-2 w-50 h-25">
+        <v-btn class="mx-1" color="green-darken-3" variant="flat" width="200" :ripple="false" prepend-icon="mdi-github"
+          href="https://github.com/m0L3cuL3">Github</v-btn>
+        <v-btn class="mx-1" color="blue-darken-3" variant="flat" width="200" :ripple="false" prepend-icon="mdi-linkedin"
+          href="https://www.linkedin.com/in/seanbaang">LinkedIn</v-btn>
+      </div>
+    </div>
   </div>
 </template>
 
