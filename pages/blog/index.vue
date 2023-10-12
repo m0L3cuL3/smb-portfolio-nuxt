@@ -1,4 +1,7 @@
 <template>
+  <Head>
+    <Title>Blog</Title>
+  </Head>
   <div class="blog-container">
     <div class="blog-header">
       <h1 class="blog-title">Blog Posts</h1>
