@@ -20,4 +20,10 @@ export default defineNuxtConfig({
       autoImport: true,
     },
   },
+  runtimeConfig: {
+    public: {
+      databaseId: process.env.DATABASE_ID,
+      collectionId: process.env.COLLECTION_ID
+    }
+  }
 });
