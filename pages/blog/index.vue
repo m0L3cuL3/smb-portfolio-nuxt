@@ -5,71 +5,46 @@
   <div class="blog-container">
     <div class="blog-header">
       <h1 class="blog-title">Blog Posts</h1>
-      <p class="text-yellow font-weight-thin">⚠️ dummy data ⚠️</p>
     </div>
     <div class="blog-posts">
-      <v-row dense>
-        <v-col cols="12" md="6" lg="4" v-for="post in blogPosts" :key="post.id">
-          <v-card class="mx-auto my-4" max-width="400" outlined>
-            <v-card-title class="blog-post-title">{{ post.title }}</v-card-title>
-            <v-card-text class="blog-post-content">{{ post.content }}</v-card-text>
-            <v-card-subtitle class="date-text">Uploaded {{ formatDate(post.date) }}.</v-card-subtitle>
-            <v-card-actions>
-              <v-btn class="text-center" color="blue" :href="'/blog/' + post.id" width="100%" variant="text">Read
-                More</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
+      <div class="blog-post" v-for="post in blogPosts" :key="post.$id">
+        <v-card class="pa-4 " elevation="2">
+          <v-card-subtitle class="date-text">Uploaded {{ formatDate(post.$createdAt) }}.</v-card-subtitle>
+          <v-card-title class="blog-post-title">{{ post.title }}</v-card-title>
+          <v-card-text class="blog-post-content">{{ truncateText(post.content, 500) }}</v-card-text>
+          <v-card-actions>
+            <v-btn class="read-more-button text-center" color="blue" :href="'/blog/' + post.$id" variant="text"
+              width="100%">Read More</v-btn>
+          </v-card-actions>
+        </v-card>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import moment from 'moment';
-import { ref } from 'vue';
+import { databases } from '~/utils/appwrite';
+const config = useRuntimeConfig();
 
-const blogPosts = ref([
-  {
-    id: 1,
-    title: 'Modern Design Trends',
-    content: 'Discover the latest design trends in web development and user interfaces.',
-    date: '2023-10-12',
-  },
-  {
-    id: 2,
-    title: 'The Art of Web Typography',
-    content: 'Learn how to use typography effectively to enhance your website design.',
-    date: '2023-10-10',
-  },
-  {
-    id: 3,
-    title: 'Mastering Responsive Layouts',
-    content: 'Explore the principles of responsive web design and create beautiful layouts for all devices.',
-    date: '2023-10-08',
-  },
-  {
-    id: 4,
-    title: 'Effective Content Strategy',
-    content: 'Craft a content strategy that resonates with your target audience and drives engagement.',
-    date: '2023-10-05',
-  },
-  {
-    id: 5,
-    title: 'SEO Best Practices',
-    content: `Boost your website's visibility in search engines with proven SEO techniques.`,
-    date: '2023-09-30',
-  },
-  {
-    id: 6,
-    title: 'Creating Engaging User Experiences',
-    content: 'Design user experiences that captivate and retain your website visitors.',
-    date: '2023-09-25',
-  },
-]);
+let response = await databases.listDocuments(
+  config.public.databaseId,
+  config.public.collectionId
+);
+
+const blogPosts = response.documents;
 
 const formatDate = (date: any) => {
   return moment(date).fromNow();
+};
+
+// Function to truncate text
+const truncateText = (text: any, length: any) => {
+  if (text.length > length) {
+    return text.substring(0, length) + '...';
+  } else {
+    return text;
+  }
 };
 </script>
 
@@ -94,6 +69,11 @@ const formatDate = (date: any) => {
   align-items: center;
 }
 
+.blog-post {
+  width: 100%;
+  margin: 1rem 0;
+}
+
 .blog-post-title {
   font-size: 1.2rem;
   font-weight: bold;
@@ -104,8 +84,14 @@ const formatDate = (date: any) => {
   color: #6e6e6e;
 }
 
+.read-more-button {
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+}
+
 .date-text {
-  text-align: center;
+  text-align: right;
   font-size: 0.8rem;
   color: #9e9e9e;
   margin-top: 0.5rem;
